@@ -1,0 +1,21 @@
+//WAP To create an array of subjects you are studying in current semester.
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+string arr[500];
+int n;
+cout<<"Enter the number of subjects : ";
+cin>>n;
+cout<<"Enter the subjects :\n";
+for(int i=0;i<=n;i++)
+{
+   cin>>arr[i];    
+}
+for(int i=0;i<=n;i++)
+{
+   cout<<"Subject Name " <<(i+1)<< " is : "<<arr[i]<<"\n";
+}
+return 0;
+}
