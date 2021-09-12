@@ -9,11 +9,13 @@ int n;
 cout<<"Enter the number of subjects : ";
 cin>>n;
 cout<<"Enter the subjects :\n";
-for(int i=0;i<=n;i++)
+cin.ignore();
+for(int i=0;i<n;i++)
 {
-   cin>>arr[i];    
+   getline(std::cin,arr[i]);
+  //cin>>arr[i];    
 }
-for(int i=0;i<=n;i++)
+for(int i=0;i<n;i++)
 {
    cout<<"Subject Name " <<(i+1)<< " is : "<<arr[i]<<"\n";
 }
