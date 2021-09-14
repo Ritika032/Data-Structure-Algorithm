@@ -2,15 +2,13 @@
 #include<conio.h>
 #include<string.h>
 #include<process.h>
-
 using namespace std;
-
   struct book 
     {
         string name; 
         string author;
-		int year;
-		int n;        
+	int year;
+	int n;        
         void enterdetails();
         void printdetails();
     };
@@ -30,8 +28,8 @@ using namespace std;
 	cout<<"Enter the year of Publishing: ";
 	cin.ignore();
 	cin>>arr[i].year;
-    }
-	}   
+       }
+     }   
 	void printdetails(book arr[],int n)
 	{
 	cout<<"\n";
@@ -45,7 +43,7 @@ using namespace std;
 	cout<<arr[i].author;
 	cout<<"\nYear of Publishing: ";
 	cout<<arr[i].year;
-    }
+       }
 	} 
     int main()
     { 
