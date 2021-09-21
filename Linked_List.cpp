@@ -17,7 +17,6 @@ void printlist(struct node* ptr)
 int main()
 {
 struct node *n1,*n2,*n3,*n4,*n5;
-
 //Allocate memory for nodes in the linked list in heap.
 n1=(struct node*)malloc(sizeof(struct node));
 n2=(struct node*)malloc(sizeof(struct node));
@@ -42,5 +41,3 @@ n5->link=NULL;
 
 printlist(n1);
 }
-
-
