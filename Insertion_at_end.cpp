@@ -57,5 +57,3 @@ cout<<"\nLinked List After Insertion:\n";
 printlist(n1);
 return 0;
 }
-
-
