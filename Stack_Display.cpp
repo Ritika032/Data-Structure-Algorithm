@@ -1,94 +1,60 @@
-//Stack Implementation with linked list using push & pop
-#include<stdlib.h>
+//Implement Stack Using Array with Push & Pop operations
+#include<stdio.h>
 #include<iostream>
+#include<conio.h>
 using namespace std;
-struct Node
-{
-    int data;
-    struct Node *link;
-} *TOP = NULL;   
-//To display the stack elements
+#define SIZE 5
+
+int stack[SIZE];
+int top = -1;
+
+//To Display elements in Satck
 void display()
 {
-    struct Node *temp;
-    temp = TOP;
-    if (TOP == NULL)
+    if(top == -1)                               
     {
         cout << "Stack is empty!";
-        exit(1);
     }
-    while(temp != NULL)
-    {
-        cout << temp -> data;
-        temp = temp -> link;
-        cout << "\n";
-    }
+    for(int i=top;i>= 0;i--)
+    cout << stack[i] <<"\n";
 }
-//To insert elements in stack
-void push(int data)
-{
-        struct Node *temp = (Node*)malloc(sizeof(struct Node));
-        temp -> data = data;
-        temp -> link = NULL;
-    
-        temp -> link = TOP;
-        TOP = temp;
-} 
 
-//To remove the last element from the stack
+//To insert elements in Stack
+void push(int val)   
+{
+    if (top == SIZE - 1)
+	{
+        cout << "Stack is full!";                  
+    }
+    top++;
+    stack[top] = val;
+}
+
+//To remove the elements from Stack
 int pop()
-{ 
-    struct Node* temp;
-    temp = TOP;
-    if(TOP == NULL)
-    {cout << "Stack is empty!";
-    exit(1);
-    }
-    int val = temp -> data;
-    TOP = TOP -> link;
-    free(temp);
-    return val;    
-}
-	
-	
-int main()
-
 {
-	int value,number,rem;
-	cout<<"Enter the number of elements to be pushed: ";
-	cin>>number;
-	cout<<"Push Elemets:\n";
-	for(int i=0;i<number;i++)
+    int val;
+    if (top == -1)
 	{
-        cin>>value;
-        push(value);
-	}
-	cout<<"Stack After pushing elements:\n";
+        cout << "Stack is empty!";                 
+    }
+    val = stack[top];
+    top--;
+    return val;
+}
+
+int main()
+{
+    push(17);
+    push(34);
+    push(57);
+    push(49);
+    push(82);
+
+    cout << "After push-\nElements in Stack is:\n";
     display();
-    
-	cout<<"Enter the number of elements to be removed: ";
-	cin>>rem;
-	if(rem==number)
-	{   
-	    cout<<"All are removed!\t";
-	    for(int j=0;j<=number;j++)
-	    {
-		pop();
-	    }
-	}
-	else if(rem<=number)
-	{
-		for(int j=0;j<rem;j++)
-		{
-		pop();
-	    }
-	}
-	else
-	{
-		cout<<"Can't Remove "<<rem<<" numbers";
-		cout<<"\nEnter valid number";
-		exit(1);
-	}
-	cout<<"\nAfter removing "<<rem<<" element:\n";
+
+    cout << "\nRemove First Element " <<pop();
+    cout << "\nAfter pop-\nElements in Stack is:\n";
     display();
 }
