@@ -63,14 +63,14 @@ int main()
 	d2->next=d3;
 	d3->prev=d2;
 	d3->next=NULL;
-    R=d3;
+        R=d3;
 	
 	cout<<"Dobly Linked List:\n";
 	display();
 	cout<<"\nDoubly Linked List after Lmost Insertion:\n";
 	insertatfirst();
 	display();
-    cout<<"\nDoubly Linked List after Rmost Insertion:\n";
+        cout<<"\nDoubly Linked List after Rmost Insertion:\n";
 	insertatlast();
 	display();
 	
