@@ -8,7 +8,7 @@ using namespace std;
 int stack[SIZE];
 int top = -1;
 
-//To Display elements in Satck
+//To Display elements in Stack
 void display()
 {
     if(top == -1)                               
