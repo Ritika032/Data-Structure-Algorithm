@@ -67,7 +67,7 @@ int main()
         push(value);
 	}
 	cout<<"\nStack After pushing elements:\n";
-    display();
+        display();
     
 	cout<<"\nEnter the number of elements to be removed: ";
 	cin>>remove;
@@ -93,5 +93,5 @@ int main()
 		exit(1);
 	}
 	cout<<"\nAfter removing "<<remove<<" element:\n";
-    display();
+        display();
 }
