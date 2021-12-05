@@ -1,26 +1,23 @@
 #include<stdio.h>
 #include<iostream>
 #include<conio.h>
-
 using namespace std;
 #define SIZE 3
-
 int CQUEUE[SIZE];
 int front = -1, rear = -1;
 
 //TO INSERT ELEMENTS IN THE QUEUE THROUGH THE REAR END
 void enqueue(int val)
 {
-    if ((rear == (SIZE - 1)) && (front == 0) || (rear == (front - 1)))                     //to check if the QUEUE is full
-    {
+    if ((rear == (SIZE - 1)) && (front == 0) || (rear == (front - 1)))                    
         cout << "The QUEUE is FULL!! Addition not possible.";
         exit(1);
     }
 
-    if ( front == -1 && rear == -1)                                                        //insertion of first element
+    if ( front == -1 && rear == -1)                                                        
         front = rear = 0;
   
-    else if (rear == (SIZE-1))                                                             //when reaches the end of the CIRCULAR queue
+    else if (rear == (SIZE-1))                                                             
         rear = 0;
 
     else
@@ -34,15 +31,15 @@ int dequeue()
 {
     int del = 0;
     
-    if (front == -1 && rear == -1)                                                         //if the QUEUE is EMPTY
+    if (front == -1 && rear == -1)                                                         
     {
         cout << "The QUEUE is EMPTY!! Deletion not possible.";
         exit(1);
     }
 
-    del = CQUEUE[front];                                                                    //value of deleted front element
+    del = CQUEUE[front];                                                                   
 
-    if ((front == 0 && rear == 0) || (front == (SIZE - 1) && rear == (SIZE-1)))            //if only single element exists
+    if ((front == 0 && rear == 0) || (front == (SIZE - 1) && rear == (SIZE-1)))            
         front = rear = -1;
 
     if(front == (SIZE - 1))                                                                 
@@ -57,7 +54,7 @@ int dequeue()
 //TO DISPLAY THE ELEMENTS IN THE QUEUE FROM FRONT TO REAR END
 void cirQueue()
 {
-    if (front == -1 && rear == -1)                                                          //if the QUEUE is EMPTY
+    if (front == -1 && rear == -1)                                                          
     {
         cout << "The QUEUE is EMPTY!!!";
         return;
@@ -77,15 +74,14 @@ void cirQueue()
             cout << CQUEUE[i] << "\t";
             i++;
         }
-        i = 0;                                                                              //starting from the front position
-        while ( i <= rear)                                                                  //till rear
+        i = 0;                                                                              
+        while ( i <= rear)                                                                  
         {
             cout << CQUEUE[i] << "\t"; 
             i++; 
         }        
     }
 }
-
 int main()
 {
     int ch, val;
@@ -126,5 +122,3 @@ int main()
         }
     } while ((c == 'y') || (c == 'Y')); 
 }
-
-        
